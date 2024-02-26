@@ -6,7 +6,16 @@ export const app = express();
 app.use(urlencoded({ extended: true }));
 app.use(json());
 
-RegisterRoutes(app);
+// Logging
+app.use((req, _, next) => {
+  console.log(`${req.method} ${req.path}`);
+  next();
+});
+
+// Register API routes under /api
+const apiRouter = express.Router();
+RegisterRoutes(apiRouter);
+app.use("/api", apiRouter);
 
 const port = process.env.PORT || 80;
 
