@@ -11,7 +11,7 @@ export class DefaultService {
      * @returns string Ok
      * @throws ApiError
      */
-    public static getUser(
+    public static testApi(
         param: number,
     ): CancelablePromise<string> {
         return __request(OpenAPI, {

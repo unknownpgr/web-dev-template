@@ -21,9 +21,9 @@ export function RegisterRoutes(app: Router) {
     // ###########################################################################################################
         app.get('/test/:param',
             ...(fetchMiddlewares<RequestHandler>(UsersController)),
-            ...(fetchMiddlewares<RequestHandler>(UsersController.prototype.getUser)),
+            ...(fetchMiddlewares<RequestHandler>(UsersController.prototype.testApi)),
 
-            function UsersController_getUser(request: any, response: any, next: any) {
+            function UsersController_testApi(request: any, response: any, next: any) {
             const args = {
                     param: {"in":"path","name":"param","required":true,"dataType":"double"},
             };
@@ -37,7 +37,7 @@ export function RegisterRoutes(app: Router) {
                 const controller = new UsersController();
 
 
-              const promise = controller.getUser.apply(controller, validatedArgs as any);
+              const promise = controller.testApi.apply(controller, validatedArgs as any);
               promiseHandler(controller, promise, response, undefined, next);
             } catch (err) {
                 return next(err);

@@ -20,7 +20,7 @@
 	"paths": {
 		"/test/{param}": {
 			"get": {
-				"operationId": "GetUser",
+				"operationId": "TestApi",
 				"responses": {
 					"200": {
 						"description": "Ok",
@@ -50,7 +50,7 @@
 	},
 	"servers": [
 		{
-			"url": "/"
+			"url": "/api"
 		}
 	]
 }
