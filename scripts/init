@@ -1,0 +1,11 @@
+#!/bin/bash
+cd `dirname $0`/..
+ROOT_DIR=`pwd`
+
+echo Initializing frontend...
+cd $ROOT_DIR/frontend
+yarn
+
+echo Initializing backend...
+cd $ROOT_DIR/backend
+yarn
