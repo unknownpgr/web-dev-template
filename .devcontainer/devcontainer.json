@@ -1,0 +1,25 @@
+{
+	"name": "Node.js & TypeScript",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-20-bullseye",
+	"features": {
+		"ghcr.io/devcontainers-contrib/features/kubectl-asdf:2": {},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"mhutchie.git-graph",
+				"esbenp.prettier-vscode",
+				"streetsidesoftware.code-spell-checker",
+				"wayou.vscode-todo-highlight",
+				"GitHub.copilot",
+				"dbaeumer.vscode-eslint",
+				"yoavbls.pretty-ts-errors"
+			]
+		}
+	},
+	"postCreateCommand": "scripts/init.sh",
+	"remoteEnv": {
+		"PATH": "${containerEnv:PATH}:${containerWorkspaceFolder}/scripts"
+	}
+}
